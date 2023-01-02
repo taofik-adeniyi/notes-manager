@@ -1,4 +1,3 @@
-require("./connection/index");
 require("dotenv").config();
 const express = require("express");
 const connectDB = require("./connection/index");
