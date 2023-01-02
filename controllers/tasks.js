@@ -38,8 +38,8 @@ const updateTask = async (req, res) => {
       new: true,
       runValidators: true,
     }); //without passing the options as third arguments it returns the task that was deleted
-    if (!task)
-      return res.status(500).json({ msg: `Task with ${taskId} not found` });
+    if (!task) return createCustomError(`Task with ${taskId} not found`, 500);
+    // return res.status(500).json({ msg: `Task with ${taskId} not found` });
     res.status(200).json({ task });
   } catch (error) {
     res.status(500).json({ msg: error /* 'There was an'*/ });
